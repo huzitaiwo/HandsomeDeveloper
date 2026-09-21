@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta
+      name="description"
+      content="Hussen Taiwo — UI/UX Designer, Frontend Developer and Shopify Developer."
+    />
+
+    <meta name="theme-color" content="#f7f5ef" />
+
+    <title>Handsome. — Hussen Taiwo</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/script.js" defer></script>
+  </head>
+
+  <body>
+    <!-- Accessibility -->
+    <a class="skip-link" href="#main-content"> Skip to content </a>
+
+    <!-- =========================
+       HEADER
+  ========================== -->
+    <header class="site-header">
+      <div class="container nav-shell">
+        <!-- Logo -->
+        <a class="brand" href="/" aria-label="Handsome. home">
+          <span class="brand-mark" aria-hidden="true"> H </span>
+
+          <span class="brand-name"> Handsome<span>.</span> </span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a class="nav-link is-active" href="/"> Home </a>
+
+          <a class="nav-link" href="/work.html"> Work </a>
+
+          <a class="nav-link" href="/about.html"> About </a>
+
+          <a class="nav-link" href="/contact.html"> Contact </a>
+        </nav>
+
+        <!-- Header Actions -->
+        <div class="nav-actions">
+          <!-- Theme Toggle -->
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="Switch to dark mode"
+            aria-pressed="false"
+          >
+            <!-- Moon -->
+            <svg
+              class="theme-icon theme-icon-moon"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <path
+                d="M20.2 15.1A8.4 8.4 0 0 1 8.9 3.8a8.4 8.4 0 1 0 11.3 11.3Z"
+              />
+            </svg>
+
+            <!-- Sun -->
+            <svg
+              class="theme-icon theme-icon-sun"
+              viewBox="0 0 24 24"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="3.2" />
+              <path
+                d="M12 2v2.1M12 19.9V22M4.93 4.93l1.49 1.49M17.58 17.58l1.49 1.49M2 12h2.1M19.9 12H22M4.93 19.07l1.49-1.49M17.58 6.42l1.49-1.49"
+              />
+            </svg>
+          </button>
+
+          <!-- Let's Talk -->
+          <a class="talk-button" href="/contact.html">
+            <span>Let's talk</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+
+          <!-- Mobile Menu Button -->
+          <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+          >
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- =========================
+       MOBILE MENU
+  ========================== -->
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <div class="mobile-menu-inner">
+        <div class="mobile-menu-top">
+          <span> FOLIO / NAVIGATION </span>
+
+          <button
+            class="menu-close"
+            type="button"
+            aria-label="Close navigation menu"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6 6l12 12M18 6 6 18" />
+            </svg>
+          </button>
+        </div>
+
+        <nav class="mobile-nav" aria-label="Mobile navigation">
+          <a class="mobile-nav-link is-active" href="/">
+            <span class="mobile-index">01</span>
+            <span>Home</span>
+          </a>
+
+          <a class="mobile-nav-link" href="/work.html">
+            <span class="mobile-index">02</span>
+            <span>Work</span>
+          </a>
+
+          <a class="mobile-nav-link" href="/about.html">
+            <span class="mobile-index">03</span>
+            <span>About</span>
+          </a>
+
+          <a class="mobile-nav-link" href="/contact.html">
+            <span class="mobile-index">04</span>
+            <span>Contact</span>
+          </a>
+        </nav>
+
+        <div class="mobile-menu-footer">
+          <span>Nigeria</span>
+
+          <a href="mailto:devhandsome10@gmail.com"> devhandsome10@gmail.com </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================
+       MAIN
+  ========================== -->
+
+    <main id="main-content">
+      <section class="hero" aria-labelledby="hero-title">
+        <!-- Background Glow -->
+        <div class="hero-glow" aria-hidden="true"></div>
+
+        <div class="container hero-grid">
+          <!-- =====================
+             HERO COPY
+        ====================== -->
+
+          <div class="hero-copy">
+            <p class="eyebrow">
+              FRONTEND DEVELOPER × UI/UX DESIGNER × SHOPIFY DEVELOPER
+            </p>
+
+            <h1 id="hero-title">
+              I make digital
+              <br />
+
+              products
+              <br />
+
+              <em>feel obvious.</em>
+            </h1>
+
+            <p class="hero-description">
+              I'm Hussen Taiwo, a multidisciplinary digital product professional
+              in Nigeria. I move from idea to UX, visual design, frontend
+              implementation, and ecommerce experience without losing the
+              thread.
+            </p>
+
+            <div class="hero-actions">
+              <a class="primary-button" href="/work.html">
+                <span>See the work</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+
+              <a class="text-link" href="/about.html">
+                <span>More about me</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- =====================
+             HERO VISUAL
+        ====================== -->
+
+          <div class="hero-visual" aria-label="Portrait of Hussen Taiwo">
+            <!-- Orbit -->
+            <div class="orbit orbit-one" aria-hidden="true"></div>
+
+            <div class="orbit orbit-two" aria-hidden="true"></div>
+
+            <!-- Orbit dots -->
+            <span class="orbit-dot orbit-dot-one" aria-hidden="true"></span>
+
+            <span class="orbit-dot orbit-dot-two" aria-hidden="true"></span>
+
+            <!-- Portrait Card -->
+            <div class="hero-card">
+              <div class="hero-card-image">
+                <img
+                  src="assets/images/hussen-portrait.png"
+                  alt="Hussen Taiwo wearing a dark suit and white shirt"
+                />
+
+                <div class="hero-card-meta">
+                  <span> HUSSEN TAIWO </span>
+
+                  <span> DIGITAL CRAFT / 01 </span>
+                </div>
+              </div>
+
+              <!-- Green offset card -->
+              <div class="hero-card-offset" aria-hidden="true"></div>
+            </div>
+
+            <!-- Vertical text -->
+            <p class="visual-label" aria-hidden="true">
+              DESIGN → CODE → COMMERCE
+            </p>
+          </div>
+        </div>
+
+        <!-- =====================
+           HERO FOOTER
+      ====================== -->
+
+        <div class="container hero-bottom">
+          <div class="availability">
+            <span class="availability-dot" aria-hidden="true"></span>
+
+            <span> Available for thoughtful work </span>
+
+            <span> Nigeria / open to remote </span>
+          </div>
+
+          <p class="scroll-cue">
+            <span aria-hidden="true"> ↓ </span>
+
+            <span> Scroll to explore </span>
+          </p>
+
+          <p class="hero-note">Currently building useful things with care.</p>
+        </div>
+      </section>
+      <!-- =========================================
+     WORK SECTION
+========================================= -->
+
+      <section class="work-section" id="work" aria-labelledby="work-title">
+        <div class="container work-container">
+          <!-- Section introduction -->
+          <div class="work-intro work-reveal">
+            <p class="section-index">{ 01 / SELECTED WORK }</p>
+
+            <div class="work-intro-content">
+              <h2 id="work-title">
+                Real projects, built with
+                <br />
+                intent.
+              </h2>
+
+              <p class="work-intro-description">
+                A focused selection from the supplied live portfolio. Each
+                project uses its own showcase image and links to the associated
+                public experience.
+              </p>
+            </div>
+          </div>
+
+          <!-- Project grid -->
+          <div class="work-grid">
+            <!-- =========================
+           VELOURA
+      ========================== -->
+
+            <article class="project-card project-card-large work-reveal">
+              <a
+                class="project-image-link"
+                href="https://velourashop-4QQ7WTS.manus.space/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View VelouraEcommerce project"
+              >
+                <div class="project-image">
+                  <img
+                    src="assets/images/portfolio_2_veloura_nobadge.png"
+                    alt="VelouraEcommerce luxury skincare ecommerce website"
+                    loading="lazy"
+                  />
+
+                  <span class="project-image-note">
+                    LIVE SITE / SUPPLIED SHOWCASE
+                  </span>
+                </div>
+              </a>
+
+              <div class="project-info">
+                <div class="project-copy">
+                  <p class="project-category">ECOMMERCE / LIVE PROJECT</p>
+
+                  <h3>VelouraEcommerce</h3>
+
+                  <p class="project-description">
+                    Luxury skincare commerce, softly considered.
+                  </p>
+                </div>
+
+                <a
+                  class="project-arrow"
+                  href="https://velourashop-4QQ7WTS.manus.space/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open VelouraEcommerce"
+                >
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- =========================
+           ELVIXE
+      ========================== -->
+
+            <article class="project-card project-card-small work-reveal">
+              <a
+                class="project-image-link"
+                href="https://elvixesk-in-hyfdqpxh.manus.space/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View ElvixeSkincare project"
+              >
+                <div class="project-image">
+                  <img
+                    src="assets/images/portfolio_3_elvixe_nobadge.png"
+                    alt="ElvixeSkincare ecommerce website"
+                    loading="lazy"
+                  />
+
+                  <span class="project-image-note">
+                    LIVE SITE / SUPPLIED SHOWCASE
+                  </span>
+                </div>
+              </a>
+
+              <div class="project-info">
+                <div class="project-copy">
+                  <p class="project-category">ECOMMERCE / LIVE PROJECT</p>
+
+                  <h3>ElvixeSkincare</h3>
+
+                  <p class="project-description">
+                    Thoughtful skincare, every day.
+                  </p>
+                </div>
+
+                <a
+                  class="project-arrow"
+                  href="https://elvixesk-in-hyfdqpxh.manus.space/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open ElvixeSkincare"
+                >
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+
+            <!-- =========================
+           AI WORKSPACE
+      ========================== -->
+
+            <article
+              class="project-card project-card-large project-card-ai work-reveal"
+            >
+              <a
+                class="project-image-link"
+                href="https://aiworkspa-nzdo48cx.manus.space/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="View AIWorkspace project"
+              >
+                <div class="project-image">
+                  <img
+                    src="assets/images/portfolio_4_aiworkspace.png"
+                    alt="AIWorkspace productivity SaaS interface"
+                    loading="lazy"
+                  />
+
+                  <span class="project-image-note">
+                    LIVE SITE / SUPPLIED SHOWCASE
+                  </span>
+                </div>
+              </a>
+
+              <div class="project-info">
+                <div class="project-copy">
+                  <p class="project-category">PRODUCT DESIGN / LIVE PROJECT</p>
+
+                  <h3>AIWorkspace</h3>
+
+                  <p class="project-description">
+                    Contextual productivity for research, decisions, and shared
+                    work.
+                  </p>
+
+                  <a class="view-all-projects" href="/work.html">
+                    <span>View all 13 projects</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+
+                <a
+                  class="project-arrow"
+                  href="https://aiworkspa-nzdo48cx.manus.space/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open AIWorkspace"
+                >
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

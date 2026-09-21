@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">Handsome H logo</title>
+  <desc id="desc">Rounded charcoal square with a bright chartreuse rounded H.</desc>
+  <rect x="12" y="12" width="488" height="488" rx="118" fill="#171918" stroke="#777b79" stroke-width="10"/>
+  <path d="M166 150V362M346 150V362M166 256H346" fill="none" stroke="#C7F43D" stroke-width="42" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
