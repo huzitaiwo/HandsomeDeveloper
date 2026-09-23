@@ -280,3 +280,113 @@ if (
     element.classList.add("is-visible");
   });
 }
+
+/* =========================================
+   PROCESS SECTION REVEAL
+========================================= */
+
+const processRevealElements = document.querySelectorAll(".process-reveal");
+
+if (
+  processRevealElements.length &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
+  const processObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        entry.target.classList.add("is-visible");
+
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -50px 0px",
+    },
+  );
+
+  processRevealElements.forEach((element) => {
+    processObserver.observe(element);
+  });
+} else {
+  processRevealElements.forEach((element) => {
+    element.classList.add("is-visible");
+  });
+}
+
+/* =========================================
+   CONTEXT REVEAL
+========================================= */
+
+const contextRevealElements = document.querySelectorAll(".context-reveal");
+
+if (
+  contextRevealElements.length &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
+  const contextObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        entry.target.classList.add("is-visible");
+
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.12,
+      rootMargin: "0px 0px -50px 0px",
+    },
+  );
+
+  contextRevealElements.forEach((element) => {
+    contextObserver.observe(element);
+  });
+} else {
+  contextRevealElements.forEach((element) => {
+    element.classList.add("is-visible");
+  });
+}
+
+/* =========================================
+   TALK REVEAL
+========================================= */
+
+const talkRevealElements = document.querySelectorAll(".talk-reveal");
+
+if (
+  talkRevealElements.length &&
+  !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+) {
+  const talkObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          return;
+        }
+
+        entry.target.classList.add("is-visible");
+
+        observer.unobserve(entry.target);
+      });
+    },
+    {
+      threshold: 0.15,
+    },
+  );
+
+  talkRevealElements.forEach((element) => {
+    talkObserver.observe(element);
+  });
+} else {
+  talkRevealElements.forEach((element) => {
+    element.classList.add("is-visible");
+  });
+}
