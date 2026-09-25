@@ -1,0 +1,1669 @@
+/* ==========================================================
+   ABOUT PAGE — COMPLETE STANDALONE STYLES
+   ========================================================== */
+
+/* ==========================================================
+   RESET
+   ========================================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+
+  background: #f6f6ed;
+  color: #151715;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+a {
+  color: inherit;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+p,
+blockquote,
+figure {
+  margin: 0;
+}
+
+/* ==========================================================
+   THEME
+   ========================================================== */
+
+:root {
+  --surface: #f6f6ed;
+  --surface-secondary: #efefe7;
+
+  --text: #151715;
+  --text-muted: #696b65;
+
+  --border: #d9d9d0;
+
+  --lime: #b9f34a;
+
+  --inverse-surface: #151715;
+  --inverse-text: #f6f6ed;
+
+  --header-border: #deded6;
+
+  --menu-surface: #151715;
+  --menu-text: #f6f6ed;
+}
+
+body.dark {
+  --surface: #1d201c;
+  --surface-secondary: #151715;
+
+  --text: #f6f6ed;
+  --text-muted: #b9bab3;
+
+  --border: #353933;
+
+  --inverse-surface: #f6f6ed;
+  --inverse-text: #151715;
+
+  --header-border: #343832;
+
+  /*
+       Important:
+       Mobile menu deliberately becomes the opposite
+       of the page theme.
+    */
+  --menu-surface: #f6f6ed;
+  --menu-text: #151715;
+}
+
+/* ==========================================================
+   GLOBAL
+   ========================================================== */
+
+body,
+.site-header,
+.about-context,
+.philosophy,
+.capabilities,
+.working-approach,
+.connect,
+.site-footer {
+  transition:
+    background-color 300ms ease,
+    color 300ms ease,
+    border-color 300ms ease;
+}
+
+.section-container {
+  width: calc(100% - 184px);
+  max-width: 1182px;
+
+  margin-inline: auto;
+}
+
+/* ==========================================================
+   HEADER
+   ========================================================== */
+
+.site-header {
+  position: relative;
+  z-index: 100;
+
+  width: 100%;
+
+  background: var(--surface);
+  color: var(--text);
+
+  border-bottom: 1px solid var(--header-border);
+}
+
+.header-inner {
+  width: calc(100% - 184px);
+  max-width: 1182px;
+
+  height: 83px;
+
+  margin-inline: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==========================================================
+   LOGO
+   ========================================================== */
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+
+  gap: 12px;
+
+  color: inherit;
+
+  text-decoration: none;
+}
+
+.logo-mark {
+  width: 30px;
+  height: 30px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 8px;
+
+  background: var(--text);
+  color: var(--surface);
+
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.logo-name {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+
+  letter-spacing: -0.035em;
+}
+
+.logo-name span {
+  color: var(--lime);
+}
+
+/* ==========================================================
+   DESKTOP NAV
+   ========================================================== */
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+
+  gap: 35px;
+
+  margin-left: auto;
+  margin-right: 42px;
+}
+
+.desktop-nav a {
+  position: relative;
+
+  padding: 31px 0;
+
+  color: var(--text-muted);
+
+  font-family: "Inter", sans-serif;
+  font-size: 11px;
+
+  text-decoration: none;
+
+  transition: color 180ms ease;
+}
+
+.desktop-nav a:hover {
+  color: var(--text);
+}
+
+.desktop-nav a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 18px;
+
+  height: 1px;
+
+  background: var(--lime);
+
+  transform: scaleX(0);
+  transform-origin: left;
+
+  transition: transform 220ms ease;
+}
+
+.desktop-nav a:hover::after,
+.desktop-nav a.active::after {
+  transform: scaleX(1);
+}
+
+/* ==========================================================
+   HEADER ACTIONS
+   ========================================================== */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+}
+
+.theme-toggle {
+  width: 40px;
+  height: 40px;
+
+  display: grid;
+  place-items: center;
+
+  padding: 0;
+
+  border: 1px solid var(--border);
+  border-radius: 50%;
+
+  background: transparent;
+  color: var(--text);
+
+  cursor: pointer;
+
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--lime);
+  color: var(--lime);
+}
+
+.theme-icon {
+  display: grid;
+  place-items: center;
+}
+
+.theme-icon-sun {
+  display: none;
+}
+
+body.dark .theme-icon-moon {
+  display: none;
+}
+
+body.dark .theme-icon-sun {
+  display: grid;
+}
+
+/* ==========================================================
+   TALK BUTTON
+   ========================================================== */
+
+.talk-button {
+  min-width: 111px;
+  height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+
+  padding: 0 17px;
+
+  border-radius: 999px;
+
+  background: var(--text);
+  color: var(--surface);
+
+  font-size: 10px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.talk-button:hover {
+  background: var(--lime);
+  color: #151715;
+
+  transform: translateY(-1px);
+}
+
+/* ==========================================================
+   MOBILE MENU BUTTON
+   ========================================================== */
+
+.menu-toggle {
+  display: none;
+
+  width: 34px;
+  height: 34px;
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  gap: 4px;
+
+  padding: 0;
+
+  background: transparent;
+  color: var(--text);
+
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+
+  width: 17px;
+  height: 1px;
+
+  background: currentColor;
+
+  transition:
+    transform 220ms ease,
+    opacity 180ms ease;
+}
+
+.menu-toggle.is-open span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+
+.menu-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.is-open span:nth-child(3) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+/* ==========================================================
+   MOBILE MENU
+   ========================================================== */
+
+.mobile-menu {
+  position: fixed;
+
+  inset: 83px 0 0;
+
+  z-index: 90;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 42px 24px 24px;
+
+  background: var(--menu-surface);
+  color: var(--menu-text);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateY(-12px);
+
+  transition:
+    opacity 220ms ease,
+    visibility 220ms ease,
+    transform 260ms ease;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateY(0);
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+}
+
+.mobile-nav a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 70px;
+
+  border-bottom: 1px solid rgba(127, 127, 127, 0.2);
+
+  color: inherit;
+
+  text-decoration: none;
+}
+
+.mobile-nav a span {
+  font-family: "Manrope", sans-serif;
+  font-size: 32px;
+  font-weight: 400;
+
+  letter-spacing: -0.065em;
+}
+
+.mobile-nav a small {
+  font-size: 8px;
+
+  color: var(--menu-text);
+  opacity: 0.55;
+}
+
+.mobile-nav a.active span {
+  color: var(--lime);
+}
+
+.mobile-menu-footer {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: auto;
+
+  font-size: 8px;
+
+  opacity: 0.65;
+}
+
+/* ==========================================================
+   01 — ABOUT / CONTEXT
+   ========================================================== */
+
+.about-context {
+  background: var(--surface);
+  color: var(--text);
+
+  min-height: 1506px;
+
+  padding-top: 165px;
+  padding-bottom: 160px;
+}
+
+.context-top {
+  display: grid;
+
+  grid-template-columns: 1fr 390px;
+
+  column-gap: 105px;
+
+  align-items: start;
+}
+
+.section-label {
+  display: block;
+
+  margin-bottom: 25px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 7px;
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+}
+
+.context-title h1 {
+  font-family: "Manrope", sans-serif;
+  font-size: 91px;
+  font-weight: 400;
+
+  line-height: 0.88;
+  letter-spacing: -0.085em;
+}
+
+.context-title h1 em {
+  font-family: "DM Serif Display", serif;
+  font-style: italic;
+  font-weight: 400;
+
+  letter-spacing: -0.055em;
+}
+
+.context-intro {
+  align-self: center;
+
+  max-width: 390px;
+
+  margin-top: 150px;
+
+  font-family: "Inter", sans-serif;
+  font-size: 10px;
+  line-height: 1.55;
+
+  color: var(--text-muted);
+}
+
+/* ==========================================================
+   INTRO STORY
+   ========================================================== */
+
+.context-story {
+  display: grid;
+
+  grid-template-columns: 420px 1fr;
+
+  column-gap: 135px;
+
+  align-items: center;
+
+  margin-top: 190px;
+}
+
+.portrait {
+  position: relative;
+
+  width: 420px;
+  height: 560px;
+
+  margin: 0;
+
+  overflow: hidden;
+}
+
+.portrait::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  filter: saturate(0.92);
+}
+
+.portrait figcaption {
+  position: absolute;
+
+  right: 10px;
+  bottom: 10px;
+
+  z-index: 2;
+
+  color: #fff;
+
+  font-size: 6px;
+  font-weight: 500;
+
+  letter-spacing: 0.07em;
+}
+
+.story-content {
+  max-width: 530px;
+}
+
+.story-content .section-label {
+  margin-bottom: 23px;
+}
+
+.story-content h2 {
+  max-width: 540px;
+
+  font-family: "Manrope", sans-serif;
+  font-size: 46px;
+  font-weight: 400;
+
+  line-height: 0.91;
+  letter-spacing: -0.075em;
+}
+
+.story-copy {
+  max-width: 520px;
+
+  margin-top: 28px;
+}
+
+.story-copy p {
+  font-size: 10px;
+  line-height: 1.58;
+
+  color: var(--text-muted);
+}
+
+.story-copy p + p {
+  margin-top: 16px;
+}
+
+.story-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  height: 35px;
+
+  margin-top: 22px;
+  padding: 0 15px;
+
+  border-radius: 999px;
+
+  background: var(--text);
+  color: var(--surface);
+
+  font-size: 8px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    background-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.story-button:hover {
+  background: var(--lime);
+  color: #151715;
+
+  transform: translateY(-1px);
+}
+
+/* ==========================================================
+   02 — PHILOSOPHY
+   ========================================================== */
+
+.philosophy {
+  background: var(--surface-secondary);
+  color: var(--text);
+
+  min-height: 615px;
+
+  padding-top: 165px;
+  padding-bottom: 150px;
+}
+
+.philosophy-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 105px;
+}
+
+.philosophy-heading h2 {
+  font-family: "Manrope", sans-serif;
+  font-size: 48px;
+  font-weight: 400;
+
+  line-height: 0.92;
+  letter-spacing: -0.075em;
+}
+
+.philosophy-copy {
+  max-width: 500px;
+}
+
+.philosophy-copy blockquote {
+  font-family: "Manrope", sans-serif;
+  font-size: 35px;
+  font-weight: 400;
+
+  line-height: 0.97;
+  letter-spacing: -0.065em;
+
+  color: var(--text);
+}
+
+.philosophy-copy p {
+  max-width: 470px;
+
+  margin-top: 25px;
+
+  font-size: 9px;
+  line-height: 1.55;
+
+  color: var(--text-muted);
+}
+
+/* ==========================================================
+   03 — CAPABILITIES
+   ========================================================== */
+
+.capabilities {
+  background: var(--surface);
+  color: var(--text);
+
+  min-height: 774px;
+
+  padding-top: 160px;
+  padding-bottom: 140px;
+}
+
+.capabilities-heading {
+  display: grid;
+
+  grid-template-columns: 145px 1fr;
+
+  column-gap: 55px;
+
+  align-items: start;
+}
+
+.capabilities-heading h2 {
+  font-family: "Manrope", sans-serif;
+  font-size: 47px;
+  font-weight: 500;
+
+  line-height: 0.95;
+  letter-spacing: -0.075em;
+}
+
+.capabilities-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  gap: 25px;
+
+  margin-left: 145px;
+  margin-top: 50px;
+
+  border-top: 1px solid var(--border);
+}
+
+.capability {
+  min-height: 305px;
+
+  padding-top: 25px;
+}
+
+.capability-number {
+  display: block;
+
+  margin-bottom: 48px;
+
+  color: var(--lime);
+
+  font-size: 7px;
+  font-weight: 500;
+}
+
+.capability h3 {
+  font-family: "Manrope", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+
+  line-height: 1;
+
+  letter-spacing: -0.045em;
+}
+
+.capability p {
+  max-width: 300px;
+
+  margin-top: 16px;
+
+  font-size: 8px;
+  line-height: 1.55;
+
+  color: var(--text-muted);
+}
+
+.capability ul {
+  display: flex;
+  flex-direction: column;
+
+  gap: 9px;
+
+  margin-top: 32px;
+
+  list-style: none;
+}
+
+.capability li {
+  position: relative;
+
+  padding-left: 15px;
+
+  font-size: 8px;
+  line-height: 1.2;
+
+  color: var(--text-muted);
+}
+
+.capability li::before {
+  content: "✓";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  font-size: 7px;
+
+  color: var(--text-muted);
+}
+
+/* ==========================================================
+   04 — WORKING APPROACH
+   ========================================================== */
+
+.working-approach {
+  background: var(--surface-secondary);
+  color: var(--text);
+
+  min-height: 581px;
+
+  padding-top: 150px;
+  padding-bottom: 140px;
+}
+
+.approach-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  column-gap: 105px;
+}
+
+.approach-heading h2 {
+  font-family: "Manrope", sans-serif;
+  font-size: 49px;
+  font-weight: 400;
+
+  line-height: 0.91;
+  letter-spacing: -0.075em;
+}
+
+.approach-list {
+  list-style: none;
+
+  border-top: 1px solid var(--border);
+}
+
+.approach-list li {
+  display: grid;
+
+  grid-template-columns: 42px 1fr;
+
+  align-items: center;
+
+  min-height: 55px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.approach-list li span {
+  color: var(--lime);
+
+  font-size: 7px;
+  font-weight: 500;
+}
+
+.approach-list li p {
+  font-size: 8px;
+  line-height: 1.4;
+
+  color: var(--text);
+}
+
+/* ==========================================================
+   05 — CONNECT
+   ========================================================== */
+
+.connect {
+  background: var(--text);
+  color: var(--surface);
+
+  min-height: 492px;
+
+  padding-top: 145px;
+  padding-bottom: 130px;
+}
+
+.connect-grid {
+  display: grid;
+
+  grid-template-columns: 1fr 300px;
+
+  column-gap: 125px;
+}
+
+.connect-heading h2 {
+  font-family: "Manrope", sans-serif;
+  font-size: 50px;
+  font-weight: 400;
+
+  line-height: 0.91;
+  letter-spacing: -0.075em;
+}
+
+.connect .section-label {
+  color: var(--surface);
+}
+
+.connect-links {
+  padding-top: 3px;
+}
+
+.connect-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  min-height: 50px;
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+  color: var(--surface);
+
+  font-size: 8px;
+
+  text-decoration: none;
+
+  transition: color 180ms ease;
+}
+
+.connect-links a:first-child {
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.connect-links a:hover {
+  color: var(--lime);
+}
+
+/*
+   In dark theme the Connect section becomes light.
+*/
+body.dark .connect {
+  background: var(--surface);
+  color: var(--text);
+}
+
+body.dark .connect .section-label {
+  color: var(--text);
+}
+
+body.dark .connect-links a {
+  border-color: var(--border);
+  color: var(--text);
+}
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+
+.site-footer {
+  background: var(--surface);
+  color: var(--text);
+
+  min-height: 292px;
+
+  padding-top: 75px;
+  padding-bottom: 28px;
+}
+
+.footer-container {
+  width: calc(100% - 184px);
+  max-width: 1182px;
+
+  margin-inline: auto;
+}
+
+.footer-top {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr 1fr;
+
+  align-items: start;
+}
+
+.footer-description {
+  margin-top: 5px;
+
+  font-size: 8px;
+  line-height: 1.55;
+
+  color: var(--text-muted);
+}
+
+.footer-contact {
+  justify-self: end;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-end;
+}
+
+.footer-contact > span {
+  margin-bottom: 9px;
+
+  font-size: 6px;
+  font-weight: 500;
+
+  letter-spacing: 0.08em;
+
+  color: var(--text-muted);
+}
+
+.footer-contact > a {
+  font-family: "Manrope", sans-serif;
+  font-size: 19px;
+  font-weight: 400;
+
+  letter-spacing: -0.045em;
+
+  text-decoration: none;
+}
+
+.footer-contact > a:hover {
+  color: var(--lime);
+}
+
+.footer-contact small {
+  margin-top: 9px;
+
+  font-size: 7px;
+
+  color: var(--text-muted);
+}
+
+.footer-bottom {
+  display: grid;
+
+  grid-template-columns: 1fr auto 1fr;
+
+  align-items: center;
+
+  margin-top: 67px;
+  padding-top: 17px;
+
+  border-top: 1px solid var(--border);
+
+  font-size: 6px;
+
+  color: var(--text-muted);
+}
+
+.footer-nav {
+  display: flex;
+
+  align-items: center;
+
+  gap: 17px;
+}
+
+.footer-nav a {
+  text-decoration: none;
+}
+
+.footer-nav a:hover {
+  color: var(--text);
+}
+
+.footer-status {
+  justify-self: end;
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+}
+
+.footer-status i {
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: var(--lime);
+}
+
+/* ==========================================================
+   REVEAL ANIMATION
+   ========================================================== */
+
+.reveal {
+  opacity: 0;
+
+  transform: translateY(28px);
+
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+/* ==========================================================
+   TABLET
+   IMPORTANT:
+   This is a layout change, not a scaled desktop canvas.
+   ========================================================== */
+
+@media (max-width: 1000px) {
+  .section-container,
+  .header-inner,
+  .footer-container {
+    width: calc(100% - 100px);
+  }
+
+  .context-top {
+    grid-template-columns: 1fr 320px;
+
+    column-gap: 65px;
+  }
+
+  .context-title h1 {
+    font-size: 76px;
+  }
+
+  .context-story {
+    grid-template-columns: 330px 1fr;
+
+    column-gap: 65px;
+  }
+
+  .portrait {
+    width: 330px;
+    height: 440px;
+  }
+
+  .story-content h2 {
+    font-size: 39px;
+  }
+
+  .philosophy-grid,
+  .approach-grid {
+    column-gap: 60px;
+  }
+
+  .capabilities-heading {
+    grid-template-columns: 105px 1fr;
+
+    column-gap: 40px;
+  }
+
+  .capabilities-grid {
+    margin-left: 105px;
+  }
+}
+
+/* ==========================================================
+   MOBILE
+   ========================================================== */
+
+@media (max-width: 700px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  .section-container,
+  .footer-container {
+    width: calc(100% - 32px);
+  }
+
+  /* ------------------------------------------
+       HEADER
+       ------------------------------------------ */
+
+  .header-inner {
+    width: calc(100% - 32px);
+
+    height: 60px;
+  }
+
+  .logo {
+    gap: 8px;
+  }
+
+  .logo-mark {
+    width: 20px;
+    height: 20px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+  }
+
+  .logo-name {
+    font-size: 11px;
+  }
+
+  .desktop-nav,
+  .header-actions {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .mobile-menu {
+    inset: 60px 0 0;
+
+    padding: 28px 16px 18px;
+  }
+
+  .mobile-nav a {
+    min-height: 58px;
+  }
+
+  .mobile-nav a span {
+    font-size: 27px;
+  }
+
+  /* ------------------------------------------
+       CONTEXT
+       ------------------------------------------ */
+
+  .about-context {
+    min-height: auto;
+
+    padding-top: 67px;
+    padding-bottom: 72px;
+  }
+
+  .context-top {
+    display: block;
+  }
+
+  .section-label {
+    margin-bottom: 15px;
+
+    font-size: 5px;
+  }
+
+  .context-title h1 {
+    font-size: 43px;
+
+    line-height: 0.87;
+    letter-spacing: -0.08em;
+  }
+
+  .context-intro {
+    max-width: 285px;
+
+    margin-top: 31px;
+    margin-left: auto;
+
+    font-size: 7px;
+    line-height: 1.5;
+  }
+
+  .context-story {
+    display: flex;
+    flex-direction: column;
+
+    align-items: stretch;
+
+    gap: 28px;
+
+    margin-top: 76px;
+  }
+
+  .portrait {
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 0.75;
+  }
+
+  .portrait figcaption {
+    right: 8px;
+    bottom: 8px;
+
+    font-size: 5px;
+  }
+
+  .story-content {
+    max-width: none;
+  }
+
+  .story-content .section-label {
+    margin-bottom: 14px;
+  }
+
+  .story-content h2 {
+    max-width: 350px;
+
+    font-size: 29px;
+
+    line-height: 0.91;
+  }
+
+  .story-copy {
+    margin-top: 18px;
+  }
+
+  .story-copy p {
+    font-size: 7px;
+
+    line-height: 1.55;
+  }
+
+  .story-copy p + p {
+    margin-top: 11px;
+  }
+
+  .story-button {
+    height: 29px;
+
+    margin-top: 16px;
+    padding: 0 12px;
+
+    gap: 8px;
+
+    font-size: 7px;
+  }
+
+  /* ------------------------------------------
+       PHILOSOPHY
+       ------------------------------------------ */
+
+  .philosophy {
+    min-height: auto;
+
+    padding-top: 59px;
+    padding-bottom: 67px;
+  }
+
+  .philosophy-grid {
+    display: block;
+  }
+
+  .philosophy-heading h2 {
+    font-size: 29px;
+
+    line-height: 0.91;
+  }
+
+  .philosophy-copy {
+    margin-top: 54px;
+  }
+
+  .philosophy-copy blockquote {
+    max-width: 330px;
+
+    font-size: 25px;
+
+    line-height: 0.96;
+  }
+
+  .philosophy-copy p {
+    max-width: 315px;
+
+    margin-top: 19px;
+
+    font-size: 7px;
+
+    line-height: 1.55;
+  }
+
+  /* ------------------------------------------
+       CAPABILITIES
+       ------------------------------------------ */
+
+  .capabilities {
+    min-height: auto;
+
+    padding-top: 61px;
+    padding-bottom: 67px;
+  }
+
+  .capabilities-heading {
+    display: block;
+  }
+
+  .capabilities-heading .section-label {
+    margin-bottom: 17px;
+  }
+
+  .capabilities-heading h2 {
+    font-size: 29px;
+
+    line-height: 0.94;
+  }
+
+  .capabilities-grid {
+    display: block;
+
+    margin: 30px 0 0;
+
+    border-top: 1px solid var(--border);
+  }
+
+  .capability {
+    min-height: auto;
+
+    padding-top: 18px;
+    padding-bottom: 28px;
+
+    border-bottom: 1px solid var(--border);
+  }
+
+  .capability-number {
+    margin-bottom: 25px;
+
+    font-size: 6px;
+  }
+
+  .capability h3 {
+    font-size: 16px;
+  }
+
+  .capability p {
+    max-width: 310px;
+
+    margin-top: 12px;
+
+    font-size: 7px;
+  }
+
+  .capability ul {
+    gap: 8px;
+
+    margin-top: 21px;
+  }
+
+  .capability li {
+    font-size: 7px;
+  }
+
+  /* ------------------------------------------
+       WORKING APPROACH
+       ------------------------------------------ */
+
+  .working-approach {
+    min-height: auto;
+
+    padding-top: 61px;
+    padding-bottom: 63px;
+  }
+
+  .approach-grid {
+    display: block;
+  }
+
+  .approach-heading h2 {
+    font-size: 30px;
+
+    line-height: 0.91;
+  }
+
+  .approach-list {
+    margin-top: 47px;
+  }
+
+  .approach-list li {
+    grid-template-columns: 30px 1fr;
+
+    min-height: 55px;
+  }
+
+  .approach-list li span {
+    font-size: 6px;
+  }
+
+  .approach-list li p {
+    font-size: 7px;
+  }
+
+  /* ------------------------------------------
+       CONNECT
+       ------------------------------------------ */
+
+  .connect {
+    min-height: auto;
+
+    padding-top: 61px;
+    padding-bottom: 63px;
+  }
+
+  .connect-grid {
+    display: block;
+  }
+
+  .connect-heading h2 {
+    font-size: 30px;
+
+    line-height: 0.91;
+  }
+
+  .connect-links {
+    margin-top: 49px;
+  }
+
+  .connect-links a {
+    min-height: 43px;
+
+    font-size: 7px;
+  }
+
+  /* ------------------------------------------
+       FOOTER
+       ------------------------------------------ */
+
+  .site-footer {
+    min-height: auto;
+
+    padding-top: 45px;
+    padding-bottom: 20px;
+  }
+
+  .footer-top {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 26px;
+  }
+
+  .footer-description {
+    margin-top: 0;
+
+    font-size: 7px;
+  }
+
+  .footer-contact {
+    justify-self: start;
+
+    align-items: flex-start;
+  }
+
+  .footer-contact > span {
+    font-size: 5px;
+  }
+
+  .footer-contact > a {
+    font-size: 16px;
+  }
+
+  .footer-contact small {
+    font-size: 6px;
+  }
+
+  .footer-bottom {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    row-gap: 18px;
+
+    margin-top: 43px;
+  }
+
+  .footer-nav {
+    grid-column: 1 / -1;
+
+    order: 3;
+
+    justify-content: flex-start;
+
+    gap: 13px;
+  }
+
+  .footer-status {
+    justify-self: end;
+  }
+}
+
+/* ==========================================================
+   REDUCED MOTION
+   ========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
